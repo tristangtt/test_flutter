@@ -63,11 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
                 'You have pushed the button this many times:', style:TextStyle( color:Colors.blue, fontSize: myFontSize),
             ),
-            Text(
-              '$_counter',
-               style: TextStyle( fontSize: myFontSize),
-            ),
-            Slider(value:_counter, max:100.0, onChanged: setNewValue, min:0.0 )
+            Image.asset("images/algonquin.jpg", width: 200, height:200)
           ],
         ),
       ),

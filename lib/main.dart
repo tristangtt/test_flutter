@@ -61,9 +61,13 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-                'You have pushed the button this many times:', style:TextStyle( color:Colors.blue, fontSize: myFontSize),
+                'You have pushed the button this many times:',
+                style:TextStyle( color:Colors.blue, fontSize: myFontSize),
             ),
-            Image.asset("images/algonquin.jpg", width: 200, height:200)
+          ElevatedButton(
+            onPressed: () {  },
+            child:Image.asset("images/algonquin.jpg", width: 200, height:200),
+            ),
           ],
         ),
       ),
@@ -74,4 +78,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+}
+
+void buttonClicked(){
+
 }

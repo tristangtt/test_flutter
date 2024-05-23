@@ -75,7 +75,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   isChecked = ch;
                 });
               }
-            })
+            }),
+            Switch(value:isChecked, onChanged: (newValue) {
+              setState(() {
+                isChecked = newValue;
+              });
+            }),
           ],
         ),
       ),

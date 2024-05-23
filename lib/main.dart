@@ -32,7 +32,20 @@ class _MyHomePageState extends State<MyHomePage> {
   var _counter = 0.0;
   var myFontSize = 30.0;
   var isChecked = false;
+  late TextEditingController _controller;
 
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   void _incrementCounter() {
     setState(() {
@@ -67,7 +80,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 style:TextStyle( color:Colors.blue, fontSize: myFontSize),
             ),
             ElevatedButton(
-                onPressed: () {  },
+                onPressed: () {
+                  var myText = _controller.value.text;
+                  _controller.text = "You typed:" + myText;
+                },
                 child:Image.asset("images/algonquin.jpg", width: 200, height:200) ),
             Checkbox(value: isChecked, onChanged: (bool ? ch) {
               if (ch != null) {
@@ -81,6 +97,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 isChecked = newValue;
               });
             }),
+            TextField( controller: _controller,
+              decoration: InputDecoration(
+                  hintText:"Type here",
+                  border: OutlineInputBorder(),
+                  labelText: "First name"
+              )),
           ],
         ),
       ),

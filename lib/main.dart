@@ -31,6 +31,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   var _counter = 0.0;
   var myFontSize = 30.0;
+  var isChecked = false;
+
 
   void _incrementCounter() {
     setState(() {
@@ -64,10 +66,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 'You have pushed the button this many times:',
                 style:TextStyle( color:Colors.blue, fontSize: myFontSize),
             ),
-          ElevatedButton(
-            onPressed: () {  },
-            child:Image.asset("images/algonquin.jpg", width: 200, height:200),
-            ),
+            ElevatedButton(
+                onPressed: () {  },
+                child:Image.asset("images/algonquin.jpg", width: 200, height:200) ),
+            Checkbox(value: isChecked, onChanged: (bool ? ch) {
+              if (ch != null) {
+                setState(() {
+                  isChecked = ch;
+                });
+              }
+            })
           ],
         ),
       ),
